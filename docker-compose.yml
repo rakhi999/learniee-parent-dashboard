@@ -1,0 +1,14 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      AUTH_SECRET: local-docker-secret-change-me-before-production
+      DATA_DIR: /data
+      COOKIE_SECURE: "false"
+    volumes:
+      - learniee-data:/data
+
+volumes:
+  learniee-data:
